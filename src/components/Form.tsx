@@ -31,22 +31,22 @@ function Form() {
     {
       title: "Location",
       value: "Nairobi, Kenya",
-      icon: "/public/location.svg",
+      icon: "/location.svg",
     },
     {
       title: "Phone",
       value: "+254 701 838 690",
-      icon: "/public/phone.svg",
+      icon: "/phone.svg",
     },
     {
       title: "Email",
       value: "info@thechamadao.com",
-      icon: "/public/mail.svg",
+      icon: "/mail.svg",
     },
     {
       title: "Twitter",
       value: "@TheChamaDAO",
-      icon: "/public/x.svg",
+      icon: "/x.svg",
     },
   ];
   const [userData, setUserData] = useState<UserData>({
