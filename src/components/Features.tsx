@@ -26,21 +26,21 @@ function Features() {
     {
       id: 1,
       title: "Scalable and Efficient",
-      icon: "/public/secure.svg",
+      icon: "/secure.svg",
       description:
         "Say goodbye to manual inefficiencies and embrace a fully automated system that scales with your chama.",
     },
     {
       id: 2,
       title: "Secure and Transparent",
-      icon: "/public/scalable.svg",
+      icon: "/scalable.svg",
       description:
         "Thanks to the immutability of blockchain systems, onchain chama activities are visible to all the members of the chama and a finacial report can be easily generated from the existing immutable onchain data.",
     },
     {
       id: 3,
       title: "Accessible to All",
-      icon: "/public/accesible.svg",
+      icon: " /accesible.svg",
       description:
         "Are you saving for emergencies or building wealth? ChamaDAO makes financial freedom a reality for everyone.",
     },
