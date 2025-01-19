@@ -61,20 +61,20 @@ function Footer() {
           </a>
         </div>
         <div>
-          <h1 className="text-white font-bold font-titles mb-4">About</h1>
+          <h1 className="text-white font-bold font-titles mb-4">Company</h1>
           <Link className="flex items-center gap-2" to="/invest">
             <p className="text-white text-sm font-titles my-2 hover:underline ease-in duration-200 hover:text-[#7FC786] transition-all cursor-pointer">
               Join ChamaDAO
             </p>
           </Link>
-          <Link className="flex items-center gap-2" to="/whitepaper">
+          <a className="flex items-center gap-2" href="#about">
             <p className="text-white text-sm font-titles my-2 hover:underline ease-in duration-200 hover:text-[#7FC786] transition-all cursor-pointer">
-              Whitepaper
+              About
             </p>
-          </Link>
+          </a>
           <Link className="flex items-center gap-2" to="/our-story">
             <p className="text-white text-sm font-titles my-2 hover:underline ease-in duration-200 hover:text-[#7FC786] transition-all cursor-pointer">
-              Our Story
+              Meet the Team
             </p>
           </Link>
         </div>
@@ -91,11 +91,11 @@ function Footer() {
           </Link>
           <Link
             className="flex items-center gap-2 cursor-pointer group"
-            to="/blogs"
+            to="/whitepaper"
           >
             <IconBookFilled size={20} color="#7FC786" />
             <p className="text-white text-sm font-titles my-2 group-hover:underline ease-in duration-150 group-hover:text-[#7FC786] transition-all">
-              Read our Blogs
+              Whitepaper
             </p>
           </Link>
           <div className="flex items-center gap-2 cursor-pointer group">
