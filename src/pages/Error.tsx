@@ -10,7 +10,7 @@ function Error() {
     setMessage(getRandomDidYouKnow);
   }, []);
   return (
-    <div className="h-screen flex items-center flex-col justify-center bg-gradient-to-b to-[#2e342e] from-[#89D3DC]">
+    <div className="h-screen flex items-center flex-col justify-center bg-gradient-to-b to-[#2e342e] from-[#89D3DC] px-2">
       <IconError404 size={44} color="#7FC786" />
       <div className="flex items-center">
         <img src="/logo.svg" alt="Logo" className="h-[30px] w-[30px] ml-4" />
@@ -20,13 +20,13 @@ function Error() {
           <span className="text-[#7FC786]">DAO</span>
         </h1>
       </div>
-      <p className="text-sm font-titles text-gray-200 leading-relaxed">
+      <p className="text-sm font-titles text-gray-200 leading-relaxed text-center">
         Seems you{"'"}ve wandered of, But now that you're here..
       </p>
       <p className="text-base font-bold mt-4 font-titles text-[#7FC786]">
         Did You Know?
       </p>
-      <p className="text-sm font-titles text-gray-200 leading-relaxed mb-2 px-2 md:text-center">
+      <p className="text-sm font-titles text-gray-200 leading-relaxed mb-2 px-2 md:text-center text-center">
         {message}
       </p>
       <Link
