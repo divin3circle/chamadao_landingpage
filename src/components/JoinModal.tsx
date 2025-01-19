@@ -42,6 +42,8 @@ function JoinModal() {
           email: "",
           handle: "",
         });
+        setLoading(false);
+        handleOverlayAndModal();
       } catch (error) {
         setLoading(false);
         toast.error("Something went wrong, please try again");
