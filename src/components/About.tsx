@@ -34,7 +34,7 @@ function About() {
           <h1 className="text-white font-body bg-[#363636] text-4xl lg:text-5xl inline-block mt-8 md:mt-0 font-bold">
             What is ChamaDAO?
           </h1>
-          <p className="text-black font-titles p-1 text-sm font-light mt-2 md:mt-0">
+          <p className="text-black font-titles p-1 font-light mt-2 md:mt-0">
             ChamaDAO is a blockchain-powered platform transforming the
             traditional Kenyan chama model into a global solution for savings
             and loans. Leveraging decentralized governance, ChamaDAO eliminates
