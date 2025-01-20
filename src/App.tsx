@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useOverlayStore } from "./hooks/overlayStore";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
@@ -8,10 +9,19 @@ import { ToastContainer } from "react-toastify";
 
 export default function App() {
   const { isOverlayOpen } = useOverlayStore();
+
+  useEffect(() => {
+    if (isOverlayOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [isOverlayOpen]);
+
   return (
     <BrowserRouter>
       {isOverlayOpen && (
-        <div className="w-full absolute inset-0 bottom-0 top-0 h-[100%] bg-black/70"></div>
+        <div className="w-full absolute inset-0 bottom-0 top-0 h-[100dvh] bg-black/70"></div>
       )}
       <Routes>
         <Route path="/" element={<Landing />} />
