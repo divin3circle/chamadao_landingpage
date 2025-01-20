@@ -21,7 +21,7 @@ export default function App() {
   return (
     <BrowserRouter>
       {isOverlayOpen && (
-        <div className="w-full absolute inset-0 bottom-0 top-0 h-[100dvh] bg-black/70"></div>
+        <div className="w-full absolute inset-0 bottom-0 top-0 h-screen bg-black/70"></div>
       )}
       <Routes>
         <Route path="/" element={<Landing />} />
