@@ -24,25 +24,25 @@ function Navbar() {
           <div className="flex items-center justify-around">
             <Link
               to="/story"
-              className=" font-[500] font-titles text-xl px-2 hover:opacity-70 hover:scale-95 ease-in duration-150 transition-all"
+              className=" font-[500] font-titles text-lg px-2 hover:opacity-70 hover:scale-95 ease-in duration-150 transition-all"
             >
               Our Story
             </Link>
             <Link
               to="/contact-us"
-              className=" font-[500] font-titles text-xl px-2 hover:opacity-70 hover:scale-95 ease-in duration-150 transition-all"
+              className=" font-[500] font-titles text-lg px-2 hover:opacity-70 hover:scale-95 ease-in duration-150 transition-all"
             >
               Contat
             </Link>
             <Link
               to="/invest"
-              className=" font-[500] font-titles text-xl px-2 hover:opacity-70 hover:scale-95 ease-in duration-150 transition-all"
+              className=" font-[500] font-titles text-lg px-2 hover:opacity-70 hover:scale-95 ease-in duration-150 transition-all"
             >
               Invest
             </Link>
             <Link
               to="/whitepaper"
-              className=" font-[500] font-titles text-xl px-2 hover:opacity-70 hover:scale-95 ease-in duration-150 transition-all"
+              className=" font-[500] font-titles text-lg px-2 hover:opacity-70 hover:scale-95 ease-in duration-150 transition-all"
             >
               Whitepaper
             </Link>
