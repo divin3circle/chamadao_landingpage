@@ -15,7 +15,7 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <div className="flex items-center justify-between md:my-4 my-2 mx-2">
+    <div className="select-none flex items-center justify-between md:my-4 my-2 mx-2">
       <div className="hidden md:flex justify-between items-center w-full">
         <div className="flex justify-between items-center w-full">
           <Link to="/" className="flex items-center gap-1">
@@ -125,13 +125,15 @@ function Navbar() {
           </Link>
         </ul>
         <div className="flex items-center justify-center">
-          <button className="py-4 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce transition-all ease-in-out duration-150 w-[200px] mb-4">
+          <button className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce transition-all ease-in-out duration-150 w-[200px] mb-4">
             <img
               src="/download.svg"
               className="w-[14px] h-[14px]"
               alt="download_app"
             />
-            <h1 className="font-bold font-titles text-white">Download App</h1>
+            <h1 className="font-bold font-titles text-sm text-white">
+              Download App
+            </h1>
           </button>
         </div>
       </div>
