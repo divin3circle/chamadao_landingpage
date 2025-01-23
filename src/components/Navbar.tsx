@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(true);
+  const toggleNavbar = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     if (isOpen) {
@@ -67,7 +68,7 @@ function Navbar() {
           <h1 className="font-titles text-xl font-bold">TheChamaDAO</h1>
         </Link>
         <div className="" onClick={() => setIsOpen(false)}>
-          <IconMenuDeep size={30} />
+          <IconMenuDeep size={30} onClick={toggleNavbar} />
         </div>
       </div>
       <div
@@ -90,10 +91,7 @@ function Navbar() {
               </h1>
             </div>
           </Link>
-          <div
-            className="flex items-center justify-center mt-2"
-            onClick={() => setIsOpen(false)}
-          >
+          <div className="flex items-center justify-center mt-2">
             <IconX size={34} color="#279761" />
           </div>
         </div>
