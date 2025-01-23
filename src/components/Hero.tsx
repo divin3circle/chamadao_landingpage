@@ -1,48 +1,48 @@
-import { openModal } from "../../utils/modalFunctions";
-import { useOverlayStore } from "../hooks/overlayStore";
-function Hero() {
-  const { toggleOverlay } = useOverlayStore();
+// import { openModal } from "../../utils/modalFunctions";
+// import { useOverlayStore } from "../hooks/overlayStore";
+import { IconBrandAppstore, IconBrandGooglePlay } from "@tabler/icons-react";
 
-  const handleOverlayAndModal = () => {
-    openModal("joinModal");
-    toggleOverlay();
-  };
+function Hero() {
+  // const { toggleOverlay } = useOverlayStore();
+
+  // const handleOverlayAndModal = () => {
+  //   openModal("joinModal");
+  //   toggleOverlay();
+  // };
   return (
-    <div className="mx-auto my-0 to-[#89D3DC] from-[#7FC786] bg-gradient-to-b md:h-[85dvh] lg:max-w-[1240px] rounded-b-[63px] flex flex-col justify-center">
-      <div className="flex flex-col md:flex-row items-center md:gap-1 md:-mb-20 mt-24 md:mt-0">
-        <div className="md:mx-8 lg:pt-0 mb-4 md:mb-0 md:px-12">
-          <h1 className="text-white rounded font-body bg-[#363636] text-[2.8rem] md:text-5xl lg:text-6xl w-full lg:w-[500px] md:w-[400px] my-2 font-bold">
-            A borderless and
-          </h1>
-          <h1 className="text-white rounded font-body bg-[#363636] text-[2.8rem] md:text-5xl lg:text-6xl w-full lg:w-[480px] md:w-[380px] my-2 font-bold">
-            trustless saving
-          </h1>
-          <h1 className="text-white rounded font-body bg-[#363636] text-[2.8rem] md:text-5xl lg:text-6xl w-full lg:w-[430px] md:w-[350px] my-2 font-bold">
-            platform made
-          </h1>
-          <h1 className="text-white rounded font-body bg-[#363636] text-[2.8rem] md:text-5xl lg:text-6xl w-full lg:w-[380px] md:w-[330px] my-2 font-bold">
-            for everyone
-          </h1>
-        </div>
-        <div className="flex justify-center items-center md:mt-16">
-          <img
-            src="/hero.svg"
-            alt="Hero"
-            className="h-[400px] md:w-[400px] w-auto"
-          />
+    <div className="hero-background flex items-center justify-center flex-col md:flex-row">
+      <div className="px-4 md:px-8 lg:px-12 w-full md:w-3/4">
+        <h1 className="font-body font-semibold md:text-[40px] text-3xl text-center mb-10 md:text-start py-1 mt-32 md:mt-0">
+          The Complete Saving Platform Made For{" "}
+          <span className="text-primary font-bold">Everyone</span>
+        </h1>
+        <p className="font-titles text-xl leading-relaxed my-4 text-center w-11/12 md:text-start">
+          Join the revolution in communal financial freedom with ChamaDAO — a
+          decentralized platform inspired by Kenya’s trusted chamas.
+        </p>
+        <div className="my-12 flex w-full flex-col md:flex-row gap-2 items-center md:items-start">
+          <button className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[35px] flex items-center md:gap-1 justify-center transition-all ease-in-out duration-150 w-[90%] gap-2 md:w-[210px] my-2">
+            <IconBrandAppstore size={30} color="white" />
+            <div className="flex items-start flex-col">
+              <h1 className="font-titles text-white text-xs">Download On</h1>
+              <h1 className="font-titles font-bold text-white">App Store</h1>
+            </div>
+          </button>
+          <button className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[35px] flex items-center md:gap-1 justify-center transition-all ease-in-out duration-150 w-[90%] gap-2 md:w-[210px] my-2">
+            <IconBrandGooglePlay size={30} color="white" />
+            <div className="flex items-start flex-col">
+              <h1 className="font-titles text-white text-xs">Download On</h1>
+              <h1 className="font-titles font-bold text-white">Google Play</h1>
+            </div>
+          </button>
         </div>
       </div>
-      <p className="text-black font-titles p-1 text-sm md:w-[50%] mx-10 font-light px-10">
-        Join the revolution in communal financial freedom with ChamaDAO — a
-        decentralized platform inspired by Kenya’s trusted chamas.
-      </p>
-      <div className="flex justify-center md:justify-start items-center md:items-start mt-4 px-12">
-        <button
-          className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mx-8 mt-4 w-[162px] mb-4 md:mb-0"
-          onClick={handleOverlayAndModal}
-        >
-          Download App
-        </button>
+      <div className="flex items-center justify-center">
+        <img
+          src="/hero.svg"
+          alt="thechamadao"
+          className="object-cover h-full w-full"
+        />
       </div>
     </div>
   );

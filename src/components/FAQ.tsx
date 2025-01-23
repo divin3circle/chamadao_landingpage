@@ -72,7 +72,9 @@ function FAQ() {
       </h1>
       <div className="flex flex-col gap-2 mt-8 w-full mx-auto my-0 ease-in duration-300 transition-all border-b-[1px] border-[#B1B1B1] mb-8">
         {faqs.map((faq) => (
-          <FAOCard faq={faq} />
+          <div key={faq.title}>
+            <FAOCard faq={faq} />
+          </div>
         ))}
       </div>
     </div>

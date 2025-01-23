@@ -3,8 +3,7 @@ import { IconMenuDeep, IconX } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleNavbar = () => setIsOpen(!isOpen);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     if (isOpen) {
@@ -49,13 +48,15 @@ function Navbar() {
             </Link>
           </div>
           <div className="flex items-center justify-center">
-            <button className="py-4 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce transition-all ease-in-out duration-150 w-[170px]">
+            <button className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce transition-all ease-in-out duration-150 w-[170px]">
               <img
                 src="/download.svg"
                 className="w-[14px] h-[14px]"
                 alt="download_app"
               />
-              <h1 className="font-bold font-titles text-white">Download App</h1>
+              <h1 className="font-bold font-titles text-white text-sm">
+                Download App
+              </h1>
             </button>
           </div>
         </div>
@@ -65,7 +66,9 @@ function Navbar() {
           <img src="/logo.svg" alt="thechamadao" className="h-8 w-8" />
           <h1 className="font-titles text-xl font-bold">TheChamaDAO</h1>
         </Link>
-        <IconMenuDeep size={30} onClick={toggleNavbar} />
+        <div className="" onClick={() => setIsOpen(false)}>
+          <IconMenuDeep size={30} />
+        </div>
       </div>
       <div
         className={`backdrop-blur-lg h-[100dvh] w-full md:hidden flex flex-col fixed top-0 left-0 z-50 transform transition-transform duration-500 ${
@@ -73,7 +76,7 @@ function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between mt-1 mx-1">
-          <button className="flex items-center gap-2 mt-2">
+          <Link to="/" className="flex items-center gap-2 mt-2">
             <div className="flex items-center">
               <img
                 src="/logo.svg"
@@ -86,12 +89,12 @@ function Navbar() {
                 <span className="">DAO</span>
               </h1>
             </div>
-          </button>
+          </Link>
           <div
-            className="flex items-center justify-center md:hidden mt-2"
-            onClick={() => setIsOpen(!isOpen)}
+            className="flex items-center justify-center mt-2"
+            onClick={() => setIsOpen(false)}
           >
-            <IconX size={34} color="#7FC786" />
+            <IconX size={34} color="#279761" />
           </div>
         </div>
         <ul className="flex flex-col h-full items-center gap-12 mt-20 font-titles">

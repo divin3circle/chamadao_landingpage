@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         titles: ["Montserrat Alternates", "serif"],
-        body: ["Popins", "sans-serif"],
+        body: ["Montserrat"],
       },
       colors: {
         primary: "#279761",
