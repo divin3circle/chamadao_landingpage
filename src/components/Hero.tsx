@@ -12,11 +12,11 @@ function Hero() {
   return (
     <div className="hero-background flex items-center justify-center flex-col md:flex-row mt-24 md:mt-0">
       <div className="px-4 md:px-8 lg:px-12 w-full md:w-3/4">
-        <h1 className="font-body font-semibold md:text-[40px] text-3xl text-center mb-10 md:text-start py-1 mt-12 md:mt-0">
+        <h1 className="font-body font-semibold md:text-[40px] text-3xl text-center mb-4 md:text-start py-1 mt-12 md:mt-0">
           The Complete Saving Platform Made For{" "}
           <span className="text-primary font-bold">Everyone</span>
         </h1>
-        <p className="font-titles md:text-xl leading-relaxed my-4 text-center w-11/12 md:text-start">
+        <p className="font-titles md:text-xl leading-relaxed mt-2 text-center w-11/12 md:text-start mb-5">
           Join the revolution in communal financial freedom with ChamaDAO — a
           decentralized platform inspired by Kenya’s trusted chamas.
         </p>
