@@ -3,7 +3,7 @@ import { IconMenuDeep, IconX } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => setIsOpen(!isOpen);
 
   useEffect(() => {
@@ -67,8 +67,8 @@ function Navbar() {
           <img src="/logo.svg" alt="thechamadao" className="h-8 w-8" />
           <h1 className="font-titles text-xl font-bold">TheChamaDAO</h1>
         </Link>
-        <div className="" onClick={() => setIsOpen(false)}>
-          <IconMenuDeep size={30} onClick={toggleNavbar} />
+        <div className="" onClick={() => setIsOpen(true)}>
+          <IconMenuDeep size={30} />
         </div>
       </div>
       <div
@@ -91,7 +91,10 @@ function Navbar() {
               </h1>
             </div>
           </Link>
-          <div className="flex items-center justify-center mt-2">
+          <div
+            className="flex items-center justify-center mt-2"
+            onClick={toggleNavbar}
+          >
             <IconX size={34} color="#279761" />
           </div>
         </div>
