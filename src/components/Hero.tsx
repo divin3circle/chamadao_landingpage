@@ -10,7 +10,7 @@ function Hero() {
   //   toggleOverlay();
   // };
   return (
-    <div className="hero-background flex items-center justify-center flex-col md:flex-ro mt-24 md:mt-0">
+    <div className="hero-background flex items-center justify-center flex-col md:flex-row mt-24 md:mt-0">
       <div className="px-4 md:px-8 lg:px-12 w-full md:w-3/4">
         <h1 className="font-body font-semibold md:text-[40px] text-3xl text-center mb-10 md:text-start py-1 mt-12 md:mt-0">
           The Complete Saving Platform Made For{" "}
