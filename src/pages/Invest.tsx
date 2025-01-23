@@ -1,11 +1,16 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import Features from "../components/Features";
 import Navbar from "../components/Navbar";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { closeModal } from "../../utils/modalFunctions";
 import { toast } from "react-toastify";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../utils/firebaseConfig";
 import Footer from "../components/Footer";
+import ReCAPTCHA from "react-google-recaptcha";
+import CustomToast from "../components/CustomToast";
+import { IconCircleCheckFilled, IconXboxX } from "@tabler/icons-react";
+
 interface InvestorData {
   name: string;
   email: string;
@@ -18,6 +23,9 @@ function Invest() {
   });
   const [loading, setLoading] = useState<boolean>(false);
   const investorsRef = collection(db, "investors");
+  const recaptcha = useRef();
+
+  const siteKey = import.meta.env.VITE_SITE_KEY || "";
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function handleInvest(e: any) {
@@ -25,21 +33,66 @@ function Invest() {
       try {
         setLoading(true);
         e.preventDefault();
-        await addDoc(investorsRef, investorData);
-        toast.success("Investment submitted successfully");
-        closeModal("investModal");
-        setLoading(false);
-        setInvestorData({
-          name: "",
-          email: "",
-        });
+        if (!recaptcha.current) {
+          toast(
+            <CustomToast
+              title="Something went wrong!"
+              isError
+              T_icon={IconXboxX}
+              description="Please try again later"
+            />
+          );
+          return;
+        }
+        //@ts-expect-error
+        const captchaValue = recaptcha.current.getValue();
+        if (!captchaValue) {
+          toast(
+            <CustomToast
+              title="Please verify the reCAPTCHA!"
+              isError
+              T_icon={IconXboxX}
+              description="Verify the reCAPTCHA below to ontinue"
+            />
+          );
+        } else {
+          await addDoc(investorsRef, investorData);
+          toast(
+            <CustomToast
+              title="Your response was sent successfully"
+              isSuccess
+              T_icon={IconCircleCheckFilled}
+              description="Thank you for contacting us, we will be in touch shortly"
+            />
+          );
+          closeModal("investModal");
+          setLoading(false);
+          setInvestorData({
+            name: "",
+            email: "",
+          });
+        }
       } catch (error) {
         setLoading(false);
-        toast.error("Something went wrong, please try again");
+        toast(
+          <CustomToast
+            title="Something went wrong!"
+            isError
+            T_icon={IconXboxX}
+            description="Please try again later"
+          />
+        );
         console.error(error);
       }
     } else {
-      console.log("Please fill in the form");
+      toast(
+        <CustomToast
+          title="Please fill all fields!"
+          isError
+          T_icon={IconXboxX}
+          description="Some fields are empty."
+        />
+      );
     }
   }
 
@@ -107,7 +160,9 @@ function Invest() {
                   />
                 </div>
               </form>
-              <div className="flex gap-1 items-center mt-2">
+              <ReCAPTCHA sitekey={siteKey} />
+              {siteKey === "" && <ReCAPTCHA sitekey={siteKey} />}
+              {/* <div className="flex gap-1 items-center mt-2">
                 <input
                   type="checkbox"
                   defaultChecked={false}
@@ -116,7 +171,7 @@ function Invest() {
                 <h1 className="text-[0.5rem] font-titles font-bold text-gray-500 cursor-pointer">
                   I AM NOT A ROBOT
                 </h1>
-              </div>
+              </div> */}
               <button
                 className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4 my-8"
                 onClick={handleInvest}
