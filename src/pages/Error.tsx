@@ -21,7 +21,7 @@ function Error() {
         </h1>
       </div>
       <p className="text-sm font-titles text-gray-200 leading-relaxed text-center">
-        Seems you{"'"}ve wandered of, But now that you're here..
+        Seems like the page you{"'"}re looking for hasn{"'"}t be spawned yet.
       </p>
       <p className="text-base font-bold mt-4 font-titles text-[#7FC786]">
         Did You Know?
