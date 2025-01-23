@@ -13,9 +13,7 @@ function Landing() {
     <div className="max-w-[1240px] mx-auto my-0">
       <Navbar />
       <Hero />
-      <section id="about">
-        <About />
-      </section>
+      <About />
       <Features />
       <CTA />
       <FAQ />
