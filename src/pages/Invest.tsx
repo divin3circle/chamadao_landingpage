@@ -57,10 +57,10 @@ function Invest() {
       </div>
       <section className="pb-32 max-w-[1140px] mx-auto my-0">
         <div className="modal-box flex flex-col md:flex-row md:gap-4 w-full md:w-[80%] mx-auto my-0 mb-14 mt-32">
-          <div className="flex flex-col flex-3 items-center justify-center md:w-[40%] bg-gradient-to-b from-[#89D3DC] to-[#7FC786]">
+          <div className="flex flex-col flex-3 rounded-lg items-center justify-center md:w-[40%] bg-gradient-to-b from-[#89D3DC] to-[#7FC786] mx-2">
             <img
               src="/invest.svg"
-              className="object-contain h-[400px] rounded-md"
+              className="object-cover h-auto rounded-lg"
               alt="join"
             />
           </div>
