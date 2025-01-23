@@ -111,9 +111,9 @@ function Invest() {
                 <input
                   type="checkbox"
                   defaultChecked={false}
-                  className="checkbox checkbox-success text-[#7FC786]"
+                  className="checkbox checkbox-success text-[#7FC786] cursor-pointer"
                 />
-                <h1 className="text-[0.5rem] font-titles font-bold text-gray-500">
+                <h1 className="text-[0.5rem] font-titles font-bold text-gray-500 cursor-pointer">
                   I AM NOT A ROBOT
                 </h1>
               </div>
