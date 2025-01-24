@@ -10,7 +10,7 @@ import InvestModal from "../components/InvestModal";
 
 function Landing() {
   return (
-    <div className="max-w-[1240px] mx-auto my-0">
+    <div className="max-w-[1200px] mx-auto my-0">
       <Navbar />
       <Hero />
       <About />
