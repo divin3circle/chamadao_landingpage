@@ -12,7 +12,7 @@ function Hero() {
   return (
     <div className="hero-background flex items-center justify-center flex-col md:flex-row mt-24 md:mt-0">
       <div className="px-4 md:px-8 lg:px-12 w-full md:w-3/4 max-w-[1200px] mx-auto my-0">
-        <h1 className="select-none font-body font-semibold md:text-[44px] md:w-[80%] leading-10 text-3xl text-center mb-4 md:text-start py-1 mt-12 md:mt-0">
+        <h1 className="select-none title font-semibold md:text-[44px] md:w-[80%] leading-10 text-3xl text-center mb-4 md:text-start py-1 mt-12 md:mt-0">
           The Complete Saving Platform Made For{" "}
           <span className="text-primary font-bold">Everyone</span>
         </h1>

@@ -4,7 +4,7 @@ function Features() {
   return (
     <div className="mt-8 bg-chamaCream w-full mx-auto my-0 pt-10">
       <div className="max-w-[1200px] my-0 mx-auto flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2 lg:w-[40%] ml-4 md:pr-6">
+        <div className="w-full md:w-1/2 lg:w-[40%] ml-4 md:pr-6 pl-4 md:pl-0">
           <h1 className="title text-4xl font-semibold">
             Chama DAO is accessible to all
           </h1>
@@ -26,7 +26,7 @@ function Features() {
           <img
             src="/users2.svg"
             alt="users2"
-            className="h-[400px] md:w-[200px] lg:w-[380px] mt-0 md:mt-16"
+            className="h-[420px] md:w-[200px] lg:w-[380px] mt-0 md:mt-16"
           />
         </div>
       </div>
