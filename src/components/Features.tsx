@@ -21,12 +21,12 @@ function Features() {
           <img
             src="/users.svg"
             alt="users"
-            className="h-[400px] mt-0 md:mt-16"
+            className="h-[450px] md:w-[200px] lg:w-[380px] mt-0 md:mt-16"
           />
           <img
             src="/users2.svg"
             alt="users2"
-            className="h-[400px] mt-0 md:mt-16"
+            className="h-[400px] md:w-[200px] lg:w-[380px] mt-0 md:mt-16"
           />
         </div>
       </div>
