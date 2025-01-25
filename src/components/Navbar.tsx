@@ -15,7 +15,7 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <div className="select-none flex items-center justify-between md:my-4 my-2 mx-2">
+    <div className="select-none flex items-center justify-between md:my-4 max-w-[1200px] mx-auto my-0">
       <div className="hidden md:flex justify-between items-center w-full">
         <div className="flex justify-between items-center w-full">
           <Link to="/" className="flex items-center gap-1">

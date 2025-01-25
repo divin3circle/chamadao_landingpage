@@ -7,13 +7,15 @@ import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import JoinModal from "../components/JoinModal";
 import InvestModal from "../components/InvestModal";
+import { InfiniteScroll } from "../components/InfiniteScrollCard";
 
 function Landing() {
   return (
-    <div className="max-w-[1200px] mx-auto my-0">
+    <div className="">
       <Navbar />
       <Hero />
       <About />
+      <InfiniteScroll />
       <Features />
       <CTA />
       <FAQ />
