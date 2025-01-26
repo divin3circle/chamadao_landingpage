@@ -1,6 +1,16 @@
 import { IconChevronRight } from "@tabler/icons-react";
+import { useOverlayStore } from "../hooks/overlayStore";
 
 function Features() {
+  const { openModal } = useOverlayStore();
+
+  const handleSignUpClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      openModal();
+    }, 700);
+  };
+
   return (
     <div className="mt-8 bg-chamaCream w-full mx-auto my-0 pt-10">
       <div className="max-w-[1200px] my-0 mx-auto flex flex-col md:flex-row items-center">
@@ -12,7 +22,10 @@ function Features() {
             Whether you're saving for emergencies or building wealth, ChamaDAO
             is here to make financial freedom a reality for everyone.
           </p>
-          <button className="bg-gradient-to-b from-[#404040] to-[#1A1A1A] w-[130px] h-[47px] py-2 px-2 flex items-center justify-center gap-1 text-chamaWhite rounded-xl mb-8 font-titles">
+          <button
+            className="bg-gradient-to-b from-[#404040] to-[#1A1A1A] w-[130px] h-[47px] py-2 px-2 flex items-center justify-center gap-1 text-chamaWhite rounded-xl mb-8 font-titles"
+            onClick={handleSignUpClick}
+          >
             Sign Up
             <IconChevronRight size={25} className="" color="white" />
           </button>

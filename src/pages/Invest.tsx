@@ -2,13 +2,11 @@
 import Navbar from "../components/Navbar";
 import { useRef, useState } from "react";
 import { closeModal } from "../../utils/modalFunctions";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../utils/firebaseConfig";
 import Footer from "../components/Footer";
 import ReCAPTCHA from "react-google-recaptcha";
-import CustomToast from "../components/CustomToast";
-import { IconCircleCheckFilled, IconXboxX } from "@tabler/icons-react";
 import CTA from "../components/CTA";
 
 interface InvestorData {
@@ -17,7 +15,7 @@ interface InvestorData {
 }
 
 function Invest() {
-  const [investorData, setInvestorData] = useState<InvestorData>({
+  const [userData, setUserData] = useState<InvestorData>({
     name: "",
     email: "",
   });
@@ -29,70 +27,49 @@ function Invest() {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function handleInvest(e: any) {
-    if (investorData?.email !== "" && investorData?.name !== "") {
+    if (userData?.email !== "" && userData?.name !== "") {
       try {
         setLoading(true);
         e.preventDefault();
         if (!recaptcha.current) {
-          toast(
-            <CustomToast
-              title="Something went wrong!"
-              isError
-              T_icon={IconXboxX}
-              description="Please try again later"
-            />
-          );
+          setLoading(false);
+          toast.error("Please verify the reCAPTCHA!");
           return;
         }
         //@ts-expect-error
         const captchaValue = recaptcha.current.getValue();
         if (!captchaValue) {
-          toast(
-            <CustomToast
-              title="Please verify the reCAPTCHA!"
-              isError
-              T_icon={IconXboxX}
-              description="Verify the reCAPTCHA below to ontinue"
-            />
-          );
+          setLoading(false);
+          toast.error("Please verify the reCAPTCHA!");
         } else {
-          await addDoc(investorsRef, investorData);
-          toast(
-            <CustomToast
-              title="Your response was sent successfully"
-              isSuccess
-              T_icon={IconCircleCheckFilled}
-              description="Thank you for contacting us, we will be in touch shortly"
-            />
+          await addDoc(investorsRef, userData);
+          toast.success(
+            "Your response was sent succefully you will be contacted shortly"
           );
           closeModal("investModal");
           setLoading(false);
-          setInvestorData({
+          setUserData({
             name: "",
             email: "",
           });
         }
       } catch (error) {
         setLoading(false);
-        toast(
-          <CustomToast
-            title="Something went wrong!"
-            isError
-            T_icon={IconXboxX}
-            description="Please try again later"
-          />
+        toast.error(
+          "An error occured while sending your response, please try again later"
         );
         console.error(error);
       }
     } else {
-      toast(
-        <CustomToast
-          title="Please fill all fields!"
-          isError
-          T_icon={IconXboxX}
-          description="Some fields are empty."
-        />
+      const missingFields = Object.keys(userData).filter(
+        (key) => userData[key as keyof InvestorData] === ""
       );
+      const edittedFields = missingFields.map(
+        (field) => field[0].toUpperCase() + field.slice(1)
+      );
+      toast.error(`Please fill in the missing fields: ${edittedFields}`);
+      // toast.error("Please fill in the form");
+      return;
     }
   }
 
@@ -106,79 +83,58 @@ function Invest() {
   return (
     <div>
       <Navbar />
-      <section className="pb-32 max-w-[1140px] mx-auto my-0">
-        <div className="modal-box flex flex-col md:flex-row md:gap-4 w-full md:w-[80%] mx-auto my-0 mb-14 mt-32">
-          <div className="flex flex-col flex-3 rounded-lg items-center justify-center md:w-[40%] bg-gradient-to-b from-[#89D3DC] to-[#7FC786] mx-2">
-            <img
-              src="/invest.svg"
-              className="object-cover h-auto rounded-lg"
-              alt="join"
-            />
-          </div>
-          <div className="flex flex-col flex-1 px-4">
-            <div className="w-full flex flex-col relative">
-              <div className="">
-                <h1 className="text-white font-titles w-[11rem] bg-[#363636] p-1 text-3xl mt-8 font-bold">
-                  INVEST IN
-                </h1>
-                <h1 className="text-white font-titles w-[300px] bg-[#363636] p-1 text-3xl mt-1 font-bold">
-                  THE CHAMADAO
-                </h1>
-              </div>
-
-              <form className="">
-                <div className="flex flex-col my-4">
-                  <label className="font-titles font-bold text-sm">NAME</label>
-                  <input
-                    placeholder="Enter your name here"
-                    type="text"
-                    value={investorData.name}
-                    onChange={(e) =>
-                      setInvestorData({
-                        ...investorData,
-                        name: e.target.value,
-                      })
-                    }
-                    className="text-sm font-semibold border-b-2 bg-transparent border-[#9E9E9E] font-titles mt-2 focus:outline-none text-gray-700 placeholder:text-gray-500"
-                  />
-                </div>
-                <div className="flex flex-col mb-4 mt-6">
-                  <label className="font-titles font-bold text-sm">EMAIL</label>
-                  <input
-                    placeholder="Your Email address"
-                    type="email"
-                    value={investorData.email}
-                    onChange={(e) =>
-                      setInvestorData({
-                        ...investorData,
-                        email: e.target.value,
-                      })
-                    }
-                    className="text-sm font-semibold border-b-2 bg-transparent border-[#9E9E9E] text-gray-700 font-titles mt-2 focus:outline-none placeholder:text-gray-500"
-                  />
-                </div>
-              </form>
-              <ReCAPTCHA sitekey={siteKey} />
-              {siteKey === "" && <ReCAPTCHA sitekey={siteKey} />}
-              {/* <div className="flex gap-1 items-center mt-2">
+      <section className="pb-32 max-w-[1200px] mx-auto my-0">
+        <div className="flex items-center justify-center flex-col md:flex-row mt-12 md:mt-16 gap-4">
+          <img src="/invest.svg" alt="Invest" className="w-[400px] h-[400px]" />
+          <div className="flex items-center justify-center flex-col mt-12">
+            <div className="flex flex-col items-center ">
+              <h1 className="title font-normal p-1 text-4xl text-center md:text-5xl inline md:mt-0">
+                Invest In
+              </h1>
+              <h1 className="title font-normal p-1 text-4xl text-center md:text-5xl inline md:mt-0">
+                ChamaDAO
+              </h1>
+            </div>
+            <p className="font-titles my-4 text-center text-lg md:text-left max-w-[500px]">
+              Willing to Invest in us? Please fill in in your contact
+              information and we will reach out to you!
+            </p>
+            <div className="w-[90%] md:w-1/2 lg:w-3/4">
+              <div className="flex flex-col my-4">
                 <input
-                  type="checkbox"
-                  defaultChecked={false}
-                  className="checkbox checkbox-success text-[#7FC786] cursor-pointer"
+                  placeholder="Enter your name here"
+                  type="text"
+                  value={userData.name}
+                  onChange={(e) =>
+                    setUserData({ ...userData, name: e.target.value })
+                  }
+                  className="text-sm font-semibold border-b-2 bg-white rounded-full py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
                 />
-                <h1 className="text-[0.5rem] font-titles font-bold text-gray-500 cursor-pointer">
-                  I AM NOT A ROBOT
-                </h1>
-              </div> */}
+              </div>
+              <div className="flex flex-col my-4">
+                <input
+                  placeholder="Your Email address"
+                  type="email"
+                  value={userData.email}
+                  onChange={(e) =>
+                    setUserData({ ...userData, email: e.target.value })
+                  }
+                  className="text-sm font-semibold border-b-2 bg-white rounded-full py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
+                />
+              </div>
+              <ReCAPTCHA sitekey={siteKey} />
               <button
-                className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4 my-8"
+                className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center md:mt-4 transition-all ease-in-out duration-150 w-full"
                 onClick={handleInvest}
               >
-                Submit
+                <h1 className="font-bold font-titles text-white text-sm">
+                  Sign Up
+                </h1>
               </button>
             </div>
           </div>
         </div>
+        <div className="hidden md:block h-14 w-full bg-transparent"></div>
         <CTA />
       </section>
       <Footer />

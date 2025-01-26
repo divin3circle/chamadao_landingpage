@@ -6,6 +6,7 @@ import Invest from "./pages/Invest";
 import Landing from "./pages/Landing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import WaitingList from "./components/WaitingList";
 
 export default function App() {
   const { isOverlayOpen } = useOverlayStore();
@@ -21,7 +22,9 @@ export default function App() {
   return (
     <BrowserRouter>
       {isOverlayOpen && (
-        <div className="w-full absolute inset-0 bottom-0 top-0 h-screen bg-black/70"></div>
+        <div className="w-full no-scroll absolute inset-0 bottom-0 top-0 flex items-center justify-center h-screen backdrop-blur-2xl bg-black/50 z-50">
+          <WaitingList />
+        </div>
       )}
       <Routes>
         <Route path="/" element={<Landing />} />
