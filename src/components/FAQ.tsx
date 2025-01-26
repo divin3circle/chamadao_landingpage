@@ -67,7 +67,7 @@ function FAQ() {
   ];
   return (
     <div className="flex items-center justify-center flex-col mt-12 max-w-[1040px] mx-auto my-0">
-      <h1 className="text-white font-body bg-[#363636] p-1 md:text-3xl text-xl inline mt-4 md:my-2 md:mt-0 font-bold text-center">
+      <h1 className="title p-1 md:text-3xl text-xl inline mt-4 md:my-2 md:mt-0 font-bold text-center">
         Frequently Asked Questions
       </h1>
       <div className="flex flex-col gap-2 mt-8 w-full mx-auto my-0 ease-in duration-300 transition-all border-b-[1px] border-[#B1B1B1] mb-8">

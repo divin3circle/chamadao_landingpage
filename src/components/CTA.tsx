@@ -1,50 +1,38 @@
-import { useNavigate } from "react-router-dom";
-import user1 from "../../public/user1.svg";
-import user2 from "../../public/user2.svg";
-import user3 from "../../public/user3.png";
-import user4 from "../../public/user4.svg";
-
 function CTA() {
-  const users = [user1, user2, user3, user4];
-  const navigate = useNavigate();
-
-  const handleOverlayAndModal = () => {
-    navigate("/contact");
-  };
   return (
-    <div className="pl-4 md:pl-10 flex md:flex-row flex-col items-center justify-between max-w-[1040px] my-0 mx-auto rounded-3xl bg-gradient-to-l to-[#89D3DC] from-[#7FC786] mt-8">
-      <div className="px-4 my-8 flex-1 md:w-1/2 w-full">
-        <h1 className="text-white font-titles bg-[#363636] p-1 text-3xl inline mt-4 md:my-2 md:mt-0 font-bold">
-          Join ChamaDAO
-        </h1>
-        <h1 className="text-white font-titles bg-[#363636] p-1 text-3xl inline mt-1 md:my-2 md:mt-1 font-bold">
-          Today
-        </h1>
-        <p className="font-titles text-base w-3/4 my-4">
-          Take control of your financial future and build wealth with your
-          community.
-        </p>
-        <div className="h-[50px] w-[80%] lg:w-1/2 bg-white rounded-[30px] my-2 flex flex-row items-center mx-4">
-          <div className="flex flex-row items-center">
-            {users.map((user, index) => (
-              <img
-                key={index}
-                src={user}
-                className="-ml-4 md:-ml-5  w-12 h-12"
-                alt="user"
-              />
-            ))}
-          </div>
-          <p className="font-bold text-sm font-titles px-2">+10K Members</p>
+    <div
+      className="cta-background max-w-[1200px] my-0 mx-auto rounded-3xl mt-12 md:mt-24"
+      style={{
+        height: "500px",
+        borderRadius: "30px",
+      }}
+    >
+      <div className="cta-background gradient-overlay pl-4 md:pl-10 flex md:flex-row items-center rounded-xl justify-between flex-col">
+        <div className="px-4 flex flex-col items-center justify-center md:items-start mb-8">
+          <h1 className="title font-normal p-1 text-2xl text-center md:text-start md:text-5xl inline mt-16 md:my-2 md:mt-0">
+            Join ChamaDAO Today
+          </h1>
+          <p className="font-titles text-sm md:text-base w-3/4 my-4">
+            Take control of your financial future and build wealth with your
+            community.
+          </p>
+          <button className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce md:mt-4 transition-all ease-in-out duration-150 w-[170px]">
+            <img
+              src="/download.svg"
+              className="w-[14px] h-[14px]"
+              alt="download_app"
+            />
+            <h1 className="font-bold font-titles text-white text-sm">
+              Download App
+            </h1>
+          </button>
         </div>
-        <button
-          className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4 mt-4"
-          onClick={handleOverlayAndModal}
-        >
-          Contact Us
-        </button>
+        <img
+          src="/iphone.png"
+          alt="Hero"
+          className="absolute bottom-0 md:mb-24 md:bottom-0 object-contain h-[300px] md:h-[600px] lg:w-[600px] md:w-auto w-[300px]"
+        />
       </div>
-      <img src="/cta.svg" alt="Hero" className="h-full md:w-1/2 w-full -mr-1" />
     </div>
   );
 }
