@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import Features from "../components/Features";
 import Navbar from "../components/Navbar";
 import { useRef, useState } from "react";
 import { closeModal } from "../../utils/modalFunctions";
@@ -10,6 +9,7 @@ import Footer from "../components/Footer";
 import ReCAPTCHA from "react-google-recaptcha";
 import CustomToast from "../components/CustomToast";
 import { IconCircleCheckFilled, IconXboxX } from "@tabler/icons-react";
+import CTA from "../components/CTA";
 
 interface InvestorData {
   name: string;
@@ -105,9 +105,7 @@ function Invest() {
   }
   return (
     <div>
-      <div className="absolute top-0 left-0 right-0 z-10 flex justify-center items-center">
-        <Navbar />
-      </div>
+      <Navbar />
       <section className="pb-32 max-w-[1140px] mx-auto my-0">
         <div className="modal-box flex flex-col md:flex-row md:gap-4 w-full md:w-[80%] mx-auto my-0 mb-14 mt-32">
           <div className="flex flex-col flex-3 rounded-lg items-center justify-center md:w-[40%] bg-gradient-to-b from-[#89D3DC] to-[#7FC786] mx-2">
@@ -181,7 +179,7 @@ function Invest() {
             </div>
           </div>
         </div>
-        <Features />
+        <CTA />
       </section>
       <Footer />
     </div>

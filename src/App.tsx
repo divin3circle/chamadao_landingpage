@@ -5,7 +5,7 @@ import Error from "./pages/Error";
 import Invest from "./pages/Invest";
 import Landing from "./pages/Landing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   const { isOverlayOpen } = useOverlayStore();
@@ -29,7 +29,7 @@ export default function App() {
         <Route path="/invest" element={<Invest />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      <ToastContainer />
+      <Toaster />
     </BrowserRouter>
   );
 }
