@@ -40,16 +40,16 @@ function About() {
   ];
   return (
     <div className="sm:mt-28 mt-24 flex items-center flex-col max-w-[1200px] mx-auto my-0">
-      <h1 className="text-body text-3xl md:text-4xl my-8 title font-bold text-center w-full md:max-w-[45%]">
+      <h1 className="text-body text-3xl md:text-[44px] my-8 title text-center w-full md:max-w-[55%]">
         The smarter way to manage your savings
       </h1>
       <p className="my-2 font-titles text-base md:text-lg w-full md:max-w-[65%] text-center">
         ChamaDAO is a blockchain-powered platform transforming the traditional
         Kenyan chama model into a global solution for savings and loans.
       </p>
-      <div className="bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-2xl px-2 flex flex-col md:flex-row h-[600px] md:h-[480px] w-full mt-8">
+      <div className="bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-2xl px-2 pl-4 md:pl-12 flex flex-col md:flex-row h-[600px] md:h-[480px] w-full mt-8">
         <ul className="my-2 ml-4 md:w-[45%] flex-col gap-2">
-          <h1 className="text-chamaWhite font-bold font-body text-xl my-8">
+          <h1 className="text-chamaWhite font-bold font-body text-xl md:text-2xl my-8">
             {workingList[0].title}
           </h1>
           <li className="text-white font-body my-2 md:my-4 relative text-base">
@@ -100,7 +100,7 @@ function About() {
         <div className="bg-chamaGreen px-2 w-full md:w-1/2 h-[350px] rounded-2xl relative">
           <div className="ml-4 flex flex-col md:flex-row ">
             <div className="w-full md:w-3/4 lg:w-1/2">
-              <h1 className="text-chamaBlack font-bold font-body text-xl my-8">
+              <h1 className="text-chamaBlack font-bold font-body text-xl md:text-3xl my-8">
                 {workingList[1].title}
               </h1>
               <p className="font-titles leading-relaxed">
@@ -124,7 +124,7 @@ function About() {
         <div className="bg-chamaYellow px-2 w-full md:w-1/2 h-[350px] rounded-2xl relative">
           <div className="ml-4 flex flex-col md:flex-row ">
             <div className="w-full md:w-3/4 lg:w-1/2">
-              <h1 className="text-chamaBlack font-bold font-body text-xl my-8">
+              <h1 className="text-chamaBlack font-bold font-body text-xl md:text-3xl my-8">
                 {workingList[2].title}
               </h1>
               <p className="font-titles leading-relaxed">

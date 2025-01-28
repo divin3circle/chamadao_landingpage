@@ -62,7 +62,7 @@ function WaitingList() {
     );
   }
   return (
-    <div className="p-4 bg-transparent border-[1px] border-chamaWhite mx-1 rounded-2xl w-full md:w-1/2">
+    <div className="p-4 bg-transparent border-[1px] border-chamaWhite mx-1 rounded-2xl w-full md:w-[42%]">
       <div className="bg-chamaWhite rounded-2xl h-full w-full">
         <div className="flex items-end justify-end">
           <IconXboxXFilled
@@ -76,16 +76,16 @@ function WaitingList() {
         <div className="flex items-center justify-center">
           <img src="/wait.svg" alt="waiting" className="" />
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mt-4">
           <h1 className="title font-normal p-1 text-2xl text-center md:text-start md:text-5xl inline mt-4 md:my-2 md:mt-0">
             Join The Waitlist
           </h1>
-          <p className="font-titles text-sm md:text-base w-3/4 text-center">
+          <p className="font-titles text-sm md:text-base w-3/4 text-center text-[#838282]">
             Please enter your email to join our waitlist.
           </p>
         </div>
-        <div className="flex flex-col items-center">
-          <form className="w-3/4 md:w-1/2">
+        <div className="flex flex-col items-center mt-4 md:mt-8">
+          <form className="w-3/4 ">
             <div className="flex flex-col my-4">
               <input
                 placeholder="Enter your name here"
@@ -97,7 +97,7 @@ function WaitingList() {
                     name: e.target.value,
                   })
                 }
-                className="text-sm font-semibold border-b-2 bg-white rounded-full py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
+                className="text-sm font-semibold border-b-2 bg-white rounded-full border-[.1px] border-black py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
               />
             </div>
             <div className="flex flex-col my-4">
@@ -111,10 +111,10 @@ function WaitingList() {
                     email: e.target.value,
                   })
                 }
-                className="text-sm font-semibold border-b-2 bg-white rounded-full py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
+                className="text-sm font-semibold border-b-2 bg-white rounded-full border-[.1px] border-black py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
               />
             </div>
-            <div className="flex flex-col my-4">
+            {/* <div className="flex flex-col my-4">
               <input
                 placeholder="Your Twitter handle"
                 type="text"
@@ -127,9 +127,9 @@ function WaitingList() {
                 }
                 className="text-sm font-semibold border-b-2 bg-white rounded-full py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
               />
-            </div>
+            </div> */}
           </form>
-          <div className="flex gap-1 items-center my-2">
+          <div className="flex gap-1 items-center my-4 px-8">
             <input
               type="checkbox"
               defaultChecked
@@ -137,7 +137,7 @@ function WaitingList() {
               onChange={() => setTerms(!terms)}
               className=""
             />
-            <h1 className="text-[0.5rem] font-titles font-bold text-gray-500">
+            <h1 className="text-[0.5rem] font-titles font-bold text-gray-500 leading-snug">
               BY SIGNING UP I{"'"}M AGREEING TO CHMADAO{"'"}S{" "}
               <a href="#" className="text-blue-500 underline">
                 TERMS {" & "} CONDITIONS
@@ -145,7 +145,7 @@ function WaitingList() {
             </h1>
           </div>
           <button
-            className={`py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center md:mt-4 transition-all ease-in-out duration-150 w-1/2 text-chamaWhite mb-4 font-titles ${
+            className={`py-3 mb-8 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center md:mt-4 transition-all ease-in-out duration-150 w-3/4 text-chamaWhite font-titles ${
               terms
                 ? "cursor-pointer bg-opacity-100"
                 : "bg-opacity-50 cursor-not-allowed"

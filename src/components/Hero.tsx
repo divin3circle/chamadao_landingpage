@@ -12,10 +12,10 @@ function Hero() {
   return (
     <div className="hero-background">
       <div className="max-w-[1200px] flex items-center justify-center flex-col md:flex-row mt-24 mb-16 md:mb-4 md:mt-0">
-        <div className="px-2 w-full md:w-3/4 my-0">
-          <h1 className="select-none title font-semibold md:text-[44px] md:w-[80%] leading-10 text-3xl text-center mb-4 md:text-start py-1 mt-12 md:mt-0">
+        <div className="px-2 w-full md:w-3/4 my-0 mt-20 md:mt-0">
+          <h1 className="select-none title font-normal leading-snug md:text-[54px] md:w-[80%] text-3xl text-center mb-4 md:text-start py-1 mt-12 md:mt-0">
             The Complete Saving Platform Made For{" "}
-            <span className="text-primary font-bold">Everyone</span>
+            <span className="text-primary font-normal">Everyone</span>
           </h1>
           <p className="font-titles md:text-xl leading-relaxed mt-2 text-center w-11/12 md:text-start mb-5 select-none">
             Join the revolution in communal financial freedom with ChamaDAO — a
