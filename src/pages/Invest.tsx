@@ -122,7 +122,7 @@ function Invest() {
                   className="text-sm font-semibold border-b-2 bg-white rounded-full py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
                 />
               </div>
-              <ReCAPTCHA sitekey={siteKey} />
+              {/* <ReCAPTCHA sitekey={siteKey} className="h-[150px]" /> */}
               <button
                 className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center md:mt-4 transition-all ease-in-out duration-150 w-full"
                 onClick={handleInvest}
