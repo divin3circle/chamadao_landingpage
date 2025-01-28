@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 function CTA() {
   return (
     <div
@@ -27,10 +29,13 @@ function CTA() {
             </h1>
           </button>
         </div>
-        <img
+        <motion.img
           src="/iphone.png"
           alt="Hero"
           className="absolute bottom-0 md:mb-24 md:bottom-0 object-contain h-[300px] md:h-[600px] lg:w-[600px] md:w-auto w-[300px]"
+          initial={{ y: -100, scale: 0.5, opacity: 0 }}
+          animate={{ y: 0, scale: 1, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         />
       </div>
     </div>

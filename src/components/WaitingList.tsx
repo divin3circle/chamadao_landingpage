@@ -63,7 +63,7 @@ function WaitingList() {
   }
   return (
     <div className="p-4 bg-transparent border-[1px] border-chamaWhite mx-1 rounded-2xl w-full md:w-[42%]">
-      <div className="bg-chamaWhite rounded-2xl h-full w-full">
+      <div className="bg-white rounded-2xl h-full w-full">
         <div className="flex items-end justify-end">
           <IconXboxXFilled
             className="my-4 mx-4 cursor-pointer"
@@ -74,7 +74,7 @@ function WaitingList() {
         </div>
 
         <div className="flex items-center justify-center">
-          <img src="/wait.svg" alt="waiting" className="" />
+          <img src="/wait.svg" alt="waiting" className="h-12" />
         </div>
         <div className="flex flex-col items-center justify-center mt-4">
           <h1 className="title font-normal p-1 text-2xl text-center md:text-start md:text-5xl inline mt-4 md:my-2 md:mt-0">
@@ -88,7 +88,7 @@ function WaitingList() {
           <form className="w-3/4 ">
             <div className="flex flex-col my-4">
               <input
-                placeholder="Enter your name here"
+                placeholder="Name"
                 type="text"
                 value={userData.name}
                 onChange={(e) =>
@@ -97,12 +97,12 @@ function WaitingList() {
                     name: e.target.value,
                   })
                 }
-                className="text-sm font-semibold border-b-2 bg-white rounded-full border-[.1px] border-black py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
+                className="text-sm font-normal border-b-2 bg-white rounded-full border-[.1px] border-black py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
               />
             </div>
             <div className="flex flex-col my-4">
               <input
-                placeholder="Your Email address"
+                placeholder="Email"
                 type="email"
                 value={userData.email}
                 onChange={(e) =>
@@ -111,7 +111,7 @@ function WaitingList() {
                     email: e.target.value,
                   })
                 }
-                className="text-sm font-semibold border-b-2 bg-white rounded-full border-[.1px] border-black py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
+                className="text-sm font-normal border-b-2 bg-white rounded-full border-[.1px] border-black py-3 placeholder:text-gray-500 px-4 font-titles mt-2 focus:outline-none"
               />
             </div>
             {/* <div className="flex flex-col my-4">
