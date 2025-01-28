@@ -6,7 +6,6 @@ import { toast } from "react-hot-toast";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../utils/firebaseConfig";
 import Footer from "../components/Footer";
-import ReCAPTCHA from "react-google-recaptcha";
 import CTA from "../components/CTA";
 
 interface InvestorData {
@@ -22,8 +21,6 @@ function Invest() {
   const [loading, setLoading] = useState<boolean>(false);
   const investorsRef = collection(db, "investors");
   const recaptcha = useRef();
-
-  const siteKey = import.meta.env.VITE_SITE_KEY || "";
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function handleInvest(e: any) {

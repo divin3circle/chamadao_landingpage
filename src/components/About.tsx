@@ -39,11 +39,11 @@ function About() {
     },
   ];
   return (
-    <div className="mt-20 flex items-center flex-col max-w-[1200px] mx-auto my-0">
-      <h1 className="text-body text-4xl my-8 title font-bold text-center w-full md:max-w-[45%]">
+    <div className="sm:mt-28 mt-24 flex items-center flex-col max-w-[1200px] mx-auto my-0">
+      <h1 className="text-body text-3xl md:text-4xl my-8 title font-bold text-center w-full md:max-w-[45%]">
         The smarter way to manage your savings
       </h1>
-      <p className="my-2 font-titles text-lg w-full md:max-w-[65%] text-center">
+      <p className="my-2 font-titles text-base md:text-lg w-full md:max-w-[65%] text-center">
         ChamaDAO is a blockchain-powered platform transforming the traditional
         Kenyan chama model into a global solution for savings and loans.
       </p>
