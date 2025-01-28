@@ -62,7 +62,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between px-2 md:hidden w-full">
+      <div className="flex items-center justify-between px-2 md:hidden w-full py-4 mb-12">
         <Link to="/" className="flex items-center gap-1">
           <img src="/logo.svg" alt="thechamadao" className="h-8 w-8" />
           <h1 className="font-titles text-xl font-bold">TheChamaDAO</h1>

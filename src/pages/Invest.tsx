@@ -7,6 +7,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../utils/firebaseConfig";
 import Footer from "../components/Footer";
 import CTA from "../components/CTA";
+import { motion } from "motion/react";
 
 interface InvestorData {
   name: string;
@@ -82,7 +83,26 @@ function Invest() {
       <Navbar />
       <section className="pb-32 max-w-[1200px] mx-auto my-0">
         <div className="flex items-center justify-center flex-col md:flex-row mt-12 md:mt-16 gap-4">
-          <img src="/invest.svg" alt="Invest" className="w-[400px] h-[400px]" />
+          <div className="flex items-center justify-center">
+            <motion.img
+              initial={{
+                y: -50,
+              }}
+              animate={{
+                y: [0, -30, 0],
+              }}
+              transition={{
+                duration: 5,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              src="/invest.svg"
+              alt="Invest"
+              className="w-[400px] h-[400px] z-10"
+            />{" "}
+            <img src="/circle.svg" alt="circle" className="absolute h-72" />
+          </div>
           <div className="flex items-center justify-center flex-col mt-12">
             <div className="flex flex-col items-center ">
               <h1 className="title font-normal p-1 text-4xl text-center md:text-5xl inline md:mt-0">
