@@ -87,6 +87,7 @@ function Hero() {
               repeat: Infinity,
               repeatType: "loop",
             }}
+            loading="lazy"
             src="/iphones.svg"
             alt="thechamadao"
             className="object-cover h-full w-full z-10"

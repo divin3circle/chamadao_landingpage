@@ -1,4 +1,5 @@
 import { IconChevronRight } from "@tabler/icons-react";
+import { motion } from "motion/react";
 
 function About() {
   const workingList = [
@@ -89,7 +90,10 @@ function About() {
           </a>
         </ul>
         <div className="flex md:w-1/2 w-full h-full md:overflow-hidden flex-col items-end relative">
-          <img
+          <motion.img
+            initial={{ y: -100, scale: 0.5, opacity: 0 }}
+            animate={{ y: 0, scale: 1, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             src="/one.svg"
             alt="chamadao"
             className="md:h-[90%] w-full md:w-auto absolute bottom-0 right-0 h-full"
@@ -114,7 +118,19 @@ function About() {
                 <IconChevronRight size={20} />
               </a>
             </div>
-            <img
+            <motion.img
+              initial={{
+                y: -50,
+              }}
+              animate={{
+                y: [0, -30, 0],
+              }}
+              transition={{
+                duration: 5,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
               src="/two.svg"
               alt="chamadao"
               className="absolute bottom-6 right-2 md:h-40 lg:h-48 h-36"
@@ -138,7 +154,19 @@ function About() {
                 <IconChevronRight size={20} />
               </a>
             </div>
-            <img
+            <motion.img
+              initial={{
+                y: -50,
+              }}
+              animate={{
+                y: [0, -30, 0],
+              }}
+              transition={{
+                duration: 5,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
               src="/three.svg"
               alt="chamadao"
               className="absolute bottom-6 right-2 md:h-40 lg:h-48 h-36"

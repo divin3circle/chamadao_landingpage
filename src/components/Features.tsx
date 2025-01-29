@@ -35,11 +35,13 @@ function Features() {
             src="/users.svg"
             alt="users"
             className="h-[450px] md:w-[200px] lg:w-[380px] mt-0 md:mt-16"
+            loading="lazy"
           />
           <img
             src="/users2.svg"
             alt="users2"
             className="h-[420px] md:w-[200px] lg:w-[380px] mt-0 md:mt-16"
+            loading="lazy"
           />
         </div>
       </div>

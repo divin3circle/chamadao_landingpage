@@ -99,9 +99,15 @@ function Invest() {
               }}
               src="/invest.svg"
               alt="Invest"
+              loading="lazy"
               className="w-[400px] h-[400px] z-10"
             />{" "}
-            <img src="/circle.svg" alt="circle" className="absolute h-72" />
+            <img
+              src="/circle.svg"
+              alt="circle"
+              className="absolute h-72"
+              loading="lazy"
+            />
           </div>
           <div className="flex items-center justify-center flex-col mt-12">
             <div className="flex flex-col items-center ">
