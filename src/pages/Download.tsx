@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { IconBrandAppstore, IconBrandGooglePlay } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 
 function Download() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f0fff4] via-white to-[#e6fffa] px-4 py-8">
       {/* Navigation */}
       <nav className="max-w-6xl mx-auto flex justify-between items-center mb-16">
-        <div className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src="/logo.svg" alt="Logo" className="h-[30px] w-[30px] ml-4" />
           <motion.h1
             className="font-titles font-bold text-black text-xl ml-2"
@@ -18,7 +19,7 @@ function Download() {
             Chama
             <span className="text-[#7FC786]">DAO</span>
           </motion.h1>
-        </div>
+        </Link>
         <button className=" font-titles text-black px-6 py-2 rounded-full">
           Get ChamaDAO App Today
         </button>
