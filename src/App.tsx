@@ -9,7 +9,7 @@ import { Toaster } from "react-hot-toast";
 import WaitingList from "./components/WaitingList";
 import { motion } from "motion/react";
 import Whitepaper from "./pages/Whitepaper";
-
+import Download from "./pages/Download";
 export default function App() {
   const { isOverlayOpen } = useOverlayStore();
 
@@ -39,6 +39,7 @@ export default function App() {
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/invest" element={<Invest />} />
         <Route path="/whitepaper" element={<Whitepaper />} />
+        <Route path="/download" element={<Download />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Toaster />

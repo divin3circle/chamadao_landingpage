@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 function CTA() {
   return (
@@ -18,7 +19,10 @@ function CTA() {
             Take control of your financial future and build wealth with your
             community.
           </p>
-          <button className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce md:mt-4 transition-all ease-in-out duration-150 w-[170px]">
+          <Link
+            to="/download"
+            className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce md:mt-4 transition-all ease-in-out duration-150 w-[170px]"
+          >
             <img
               src="/download.svg"
               className="w-[14px] h-[14px]"
@@ -27,7 +31,7 @@ function CTA() {
             <h1 className="font-bold font-titles text-white text-sm">
               Download App
             </h1>
-          </button>
+          </Link>
         </div>
         <motion.img
           src="/iphone.png"

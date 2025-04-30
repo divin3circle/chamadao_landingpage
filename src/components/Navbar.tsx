@@ -48,7 +48,7 @@ function Navbar() {
               Whitepaper
             </Link>
           </div>
-          <div className="flex items-center justify-center">
+          <Link to="/download" className="flex items-center justify-center">
             <button className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce transition-all ease-in-out duration-150 w-[170px]">
               <img
                 src="/download.svg"
@@ -59,7 +59,7 @@ function Navbar() {
                 Download App
               </h1>
             </button>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="flex items-center justify-between px-2 md:hidden w-full py-4 mb-12">
@@ -124,7 +124,7 @@ function Navbar() {
             Whitepaper
           </Link>
         </ul>
-        <div className="flex items-center justify-center">
+        <Link to="/download" className="flex items-center justify-center">
           <button className="py-3 px-1 bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[30px] flex items-center gap-1 justify-center hover:animate-bounce transition-all ease-in-out duration-150 w-[200px] mb-4">
             <img
               src="/download.svg"
@@ -135,7 +135,7 @@ function Navbar() {
               Download App
             </h1>
           </button>
-        </div>
+        </Link>
       </div>
     </div>
   );
